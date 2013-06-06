@@ -4,7 +4,7 @@ karma-jstd-adapter
 This is an adapter for the [Karma Test Runner](http://karma-runner.github.io/) for [Js-Test-Driver](https://code.google.com/p/js-test-driver/).
 
 Basically that means that if you use this, you should be able to use Karma instead of Js-Test-Driver,
-with out making any changes. It's possible I broke some things though.
+with out making any changes to your tests. It's possible I broke some things though.
 
 [Another adapter exists](https://github.com/vojtajina/karma-jstd), but it takes a much different
 approach than this adapter does, by adding a layer on top of [Jasmine](http://pivotal.github.io/jasmine/)
