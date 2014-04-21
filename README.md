@@ -69,7 +69,7 @@ appear to have a license, but I figured I should mention it.
 
 This project itself is licensed under the MIT license:
 
-Copyright (c) 2013 Tyler Church
+Copyright (c) 2013-2014 Tyler Church
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

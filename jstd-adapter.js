@@ -7603,11 +7603,15 @@ jstestdriver.plugins.TestCaseManagerPlugin.prototype.getTestRunsConfigurationFor
      * Invoked before all the tests are run, it reports complete number of tests.
      */
     function beforeRun(karma) {
+        var config = jstestdriver.testCaseManager.getDefaultTestRunsConfiguration();
+        var total = 0;
+        for (var i = 0; i < config.length; i++) {
+            var configItem = config[i];
+            total += configItem.tests_.length;
+        }
         karma.info({
             // count number of tests in each of the modules
-            total: jstestdriver.testCaseManager.getDefaultTestRunsConfiguration().reduce(function(memo, currentCase) {
-                return memo + currentCase.tests_.length;
-            }, 0)
+            total: total
         });
     }
 
@@ -7643,10 +7647,9 @@ jstestdriver.plugins.TestCaseManagerPlugin.prototype.getTestRunsConfigurationFor
     }
 
     /**
-     * TODO: 0. Documentation...
+     * Returns the function needed to start running the tests.
      *
      * @param  {Object} karma Karma runner instance
-     * @return {Function} start function that will collect test modules and kick off Tyrtle runner
      */
     function createStartFn(karma) {
         jstestdriver.console = new jstestdriver.Console();

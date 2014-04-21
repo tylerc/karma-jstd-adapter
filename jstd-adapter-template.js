@@ -6,11 +6,15 @@
      * Invoked before all the tests are run, it reports complete number of tests.
      */
     function beforeRun(karma) {
+        var config = jstestdriver.testCaseManager.getDefaultTestRunsConfiguration();
+        var total = 0;
+        for (var i = 0; i < config.length; i++) {
+            var configItem = config[i];
+            total += configItem.tests_.length;
+        }
         karma.info({
             // count number of tests in each of the modules
-            total: jstestdriver.testCaseManager.getDefaultTestRunsConfiguration().reduce(function(memo, currentCase) {
-                return memo + currentCase.tests_.length;
-            }, 0)
+            total: total
         });
     }
 
