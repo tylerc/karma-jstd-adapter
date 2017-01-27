@@ -38,6 +38,7 @@
             log.push(testResult.log);
         if (testResult.message != "" && testResult.message != "[]") {
             var error = JSON.parse(testResult.message)[0];
+            log.push(error.name + ": " + error.message);
             log.push(error.stack);
         }
         karma.result({
