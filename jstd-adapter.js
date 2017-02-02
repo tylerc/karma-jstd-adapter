@@ -1,4 +1,6 @@
-
+// Prevent errors when Karma automatically loads the file from node_modules.
+// Indentation is not correct to prevent long Git diff.
+if (typeof window !== 'undefined') {
 
 /*
  * Copyright 2009 Google Inc.
@@ -7682,3 +7684,5 @@ jstestdriver.plugins.TestCaseManagerPlugin.prototype.getTestRunsConfigurationFor
         return value;
     });
 })(window);
+
+}
